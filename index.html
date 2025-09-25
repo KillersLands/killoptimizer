@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kill Optimizer - The Best Optimizer</title>
+    <meta name="description" content="Download Kill Optimizer - The ultimate system optimization tool for maximum performance">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background: linear-gradient(135deg, #1f1c18, #2a231c, #352a1f);
+            color: white;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 20px;
+            overflow-x: hidden;
+        }
+        
+        .container {
+            max-width: 900px;
+            padding: 60px 50px;
+            background: rgba(0, 0, 0, 0.7);
+            backdrop-filter: blur(20px);
+            border-radius: 25px;
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.5),
+                        0 0 100px rgba(255, 106, 0, 0.4);
+            border: 1px solid rgba(255, 140, 0, 0.4);
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+        }
+        
+        .container::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255, 140, 0, 0.15) 0%, rgba(255, 140, 0, 0) 70%);
+            z-index: -1;
+            animation: glint 10s infinite linear;
+        }
+        
+        @keyframes glint {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        
+        h1 {
+            font-size: 4.2rem;
+            margin-bottom: 30px;
+            text-shadow: 0 0 25px rgba(255, 140, 0, 0.8);
+            color: #ff8c00;
+            font-weight: 900;
+            letter-spacing: 2px;
+            background: linear-gradient(to right, #ff8c00, #ffaa33, #ffcc66, #ffaa33, #ff8c00);
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-size: 300% auto;
+            animation: shimmer 4s infinite linear;
+        }
+        
+        @keyframes shimmer {
+            0% { background-position: 0% center; }
+            100% { background-position: 300% center; }
+        }
+        
+        .tagline {
+            font-size: 1.4rem;
+            margin-bottom: 50px;
+            opacity: 0.9;
+            max-width: 700px;
+            line-height: 1.7;
+            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+        }
+        
+        .download-btn {
+            display: inline-block;
+            background: linear-gradient(to right, #ff8c00, #ff6a00, #ff8c00);
+            background-size: 200% auto;
+            color: #1a1200;
+            font-size: 1.8rem;
+            font-weight: bold;
+            padding: 20px 60px;
+            border-radius: 60px;
+            text-decoration: none;
+            margin: 30px 0;
+            box-shadow: 0 15px 30px rgba(255, 106, 0, 0.6),
+                        0 0 40px rgba(255, 140, 0, 0.5);
+            transition: all 0.4s ease;
+            border: none;
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+            animation: pulse 2.5s infinite;
+        }
+        
+        .download-btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+            transition: 0.6s;
+        }
+        
+        .download-btn:hover::before {
+            left: 100%;
+        }
+        
+        .download-btn:hover {
+            transform: translateY(-8px) scale(1.08);
+            box-shadow: 0 20px 40px rgba(255, 106, 0, 0.8),
+                        0 0 60px rgba(255, 140, 0, 0.7);
+            background-position: right center;
+        }
+        
+        .download-btn:active {
+            transform: translateY(-2px) scale(1.02);
+        }
+        
+        @keyframes pulse {
+            0% { transform: scale(1); box-shadow: 0 15px 30px rgba(255, 106, 0, 0.6), 0 0 40px rgba(255, 140, 0, 0.5); }
+            50% { transform: scale(1.05); box-shadow: 0 20px 40px rgba(255, 106, 0, 0.7), 0 0 50px rgba(255, 140, 0, 0.6); }
+            100% { transform: scale(1); box-shadow: 0 15px 30px rgba(255, 106, 0, 0.6), 0 0 40px rgba(255, 140, 0, 0.5); }
+        }
+        
+        .features {
+            margin-top: 60px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 25px;
+        }
+        
+        .feature {
+            background: rgba(255, 140, 0, 0.2);
+            padding: 25px 20px;
+            border-radius: 15px;
+            border: 1px solid rgba(255, 140, 0, 0.4);
+            transition: all 0.4s ease;
+            backdrop-filter: blur(10px);
+            min-height: 180px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .feature:hover {
+            transform: translateY(-10px) scale(1.05);
+            background: rgba(255, 140, 0, 0.3);
+            box-shadow: 0 15px 30px rgba(255, 106, 0, 0.4);
+        }
+        
+        .feature-icon {
+            font-size: 3rem;
+            margin-bottom: 15px;
+        }
+        
+        .feature h3 {
+            font-size: 1.4rem;
+            margin-bottom: 10px;
+            color: #ffaa33;
+        }
+        
+        .feature p {
+            font-size: 1rem;
+            opacity: 0.9;
+        }
+        
+        .stats {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            margin: 40px 0;
+            flex-wrap: wrap;
+        }
+        
+        .stat {
+            background: rgba(255, 140, 0, 0.1);
+            padding: 20px;
+            border-radius: 15px;
+            border: 1px solid rgba(255, 140, 0, 0.3);
+        }
+        
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: #ff8c00;
+            display: block;
+        }
+        
+        .stat-label {
+            font-size: 1rem;
+            opacity: 0.9;
+        }
+        
+        footer {
+            margin-top: 80px;
+            opacity: 0.8;
+            font-size: 1.2rem;
+            color: #ffaa33;
+            text-shadow: 0 0 15px rgba(255, 140, 0, 0.6);
+            padding: 20px;
+        }
+        
+        .glow {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: -1;
+        }
+        
+        .glow::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255, 140, 0, 0.15) 0%, rgba(255, 140, 0, 0) 70%);
+            animation: rotate 25s infinite linear;
+        }
+        
+        @keyframes rotate {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        
+        .version-info {
+            background: rgba(255, 140, 0, 0.1);
+            padding: 15px;
+            border-radius: 10px;
+            margin: 20px 0;
+            border: 1px solid rgba(255, 140, 0, 0.3);
+        }
+        
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2.8rem;
+            }
+            
+            .container {
+                padding: 40px 25px;
+            }
+            
+            .download-btn {
+                font-size: 1.4rem;
+                padding: 18px 45px;
+            }
+            
+            .features {
+                grid-template-columns: 1fr;
+            }
+            
+            .stats {
+                gap: 20px;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 2.2rem;
+            }
+            
+            .tagline {
+                font-size: 1.1rem;
+            }
+            
+            .download-btn {
+                font-size: 1.2rem;
+                padding: 15px 35px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="glow"></div>
+    
+    <div class="container">
+        <h1>The Best Optimizer<br>Kill Optimizer</h1>
+        
+        <p class="tagline">
+            Experience the ultimate system optimization with our powerful tool. 
+            Boost performance, enhance security, and optimize your system like never before. 
+            Trusted by thousands of users worldwide.
+        </p>
+        
+        <div class="version-info">
+            <strong>Latest Version:</strong> Kill Optimizer v1 | <strong>Size:</strong> 10 MB | <strong>Updated:</strong> september 2025
+        </div>
+        
+        <button class="download-btn" id="downloadBtn">
+            <span style="font-size: 2rem; margin-right: 12px;">⬇️</span> 
+            DOWNLOAD NOW
+        </button>
+        
+        <div class="stats">
+            <div class="stat">
+                <span class="stat-number" id="downloadCount">i did not count :/</span>
+                <span class="stat-label">Downloads</span>
+            </div>
+            <div class="stat">
+                <span class="stat-number">4.8/5</span>
+                <span class="stat-label">User Rating</span>
+            </div>
+            <div class="stat">
+                <span class="stat-number">100%</span>
+                <span class="stat-label">Virus Free</span>
+            </div>
+        </div>
+        
+        <div class="features">
+            <div class="feature">
+                <div class="feature-icon">🚀</div>
+                <h3>Performance Boost</h3>
+                <p>Increase system speed by up to 40% with advanced optimization algorithms</p>
+            </div>
+            <div class="feature">
+                <div class="feature-icon">🛡️</div>
+                <h3>System Protection</h3>
+                <p>Real-time monitoring and protection against system vulnerabilities</p>
+            </div>
+            <div class="feature">
+                <div class="feature-icon">⚡</div>
+                <h3>Fast Optimization</h3>
+                <p>One-click optimization that works in seconds, not minutes</p>
+            </div>
+            <div class="feature">
+                <div class="feature-icon">🔒</div>
+                <h3>Privacy Focused</h3>
+                <p>Zero data collection - your privacy is our priority</p>
+            </div>
+        </div>
+    </div>
+    
+    <footer>
+        killoptimizer.com | © 2024 Kill Optimizer. All rights reserved.
+    </footer>
+
+    <script>
+        document.getElementById('downloadBtn').addEventListener('click', function() {
+            // Create a temporary link to trigger download
+            const link = document.createElement('a');
+            
+            // Update this filename to match your actual file
+            link.href = 'KillOptimizer_v2.5.1_Setup.exe'; // Change to your actual filename
+            link.download = 'KillOptimizer_v2.5.1_Setup.exe'; // Change to your actual filename
+            
+            // Append to body, click, and remove
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+            
+            // Update download counter
+            const downloadCount = document.getElementById('downloadCount');
+            let currentCount = parseInt(downloadCount.textContent);
+            if (!isNaN(currentCount)) {
+                downloadCount.textContent = (currentCount + 1) + '+';
+            }
+            
+            // Show download confirmation
+            const originalText = this.innerHTML;
+            const originalBackground = this.style.background;
+            
+            this.innerHTML = '<span style="font-size: 2rem; margin-right: 12px;">✅</span> DOWNLOAD STARTED!';
+            this.style.background = 'linear-gradient(to right, #00cc66, #00aa44)';
+            this.style.boxShadow = '0 15px 30px rgba(0, 204, 102, 0.6), 0 0 40px rgba(0, 170, 68, 0.5)';
+            
+            setTimeout(() => {
+                this.innerHTML = originalText;
+                this.style.background = originalBackground;
+                this.style.boxShadow = '0 15px 30px rgba(255, 106, 0, 0.6), 0 0 40px rgba(255, 140, 0, 0.5)';
+            }, 3000);
+        });
+
+        // Add some interactive effects
+        document.addEventListener('mousemove', function(e) {
+            const glow = document.querySelector('.glow');
+            const x = e.clientX / window.innerWidth;
+            const y = e.clientY / window.innerHeight;
+            
+            glow.style.transform = `translate(${x * 20}px, ${y * 20}px)`;
+        });
+
+        // Animate stats on scroll
+        const observerOptions = {
+            threshold: 0.5,
+            rootMargin: '0px 0px -100px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        // Observe elements for animation
+        document.querySelectorAll('.feature, .stat').forEach(el => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(30px)';
+            el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+            observer.observe(el);
+        });
+    </script>
+</body>
+</html>
